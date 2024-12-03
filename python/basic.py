@@ -81,6 +81,7 @@
 # set3 = set1 ^ set2
 # print(set3)
 
+<<<<<<< HEAD
 # Set Methods
 # Python has a set of built-in methods that you can use on sets.
 
@@ -104,4 +105,58 @@
 # symmetric_difference_update()	^=	Inserts the symmetric differences from this set and another
 # union()	|	Return a set containing the union of sets
 # update()	|=	Update the set with the union of this set and others
+=======
+
+# squares = [x**2 for x in range(5)]
+# print(squares)
+
+
+# Dictionary 
+
+# okDIC={
+#     "ok":'1',
+#     "oaim":"is qqworking "
+# }
+# print (okDIC)
+
+#sets 
+ 
+# firstset = {1,2,4,5,6,7}
+
+
+# list  
+# ordered collection of the elements which ar difrent types 
+# duplicate values allowed 
+# the list are mutable they can modified 
+# syntax = []
+# usecasse =  for order data with possible outcomes 
+
+# mlist = [1,2,3,4,5,6,6]
+
+# tuple
+# an ordered colletion of elements  which can be defrent types 
+# this are the mutable [elements cannot modified ]
+# dublicate allowed 
+# syntax : ()
+# Use Case: For ordered data that should not be changed (e.g., coordinates, fixed data).
+# mytuplr= (1,2,3,5,6,7,8)
+
+
+
+# set
+# Definition: An unordered collection of unique elements.
+# Mutable: Yes (you can add/remove elements, but elements themselves must be immutable).
+# Duplicates: Not allowed.
+# Syntax: {} or set()
+# Use Case: For storing unique items and performing set operations (e.g., union, intersection).
+
+
+
+# Dictionary
+# Definition: A collection of key-value pairs.
+# Mutable: Yes.
+# Duplicates: Keys must be unique, but values can be duplicated.
+# Syntax: {key: value}
+# Use Case: For mapping relationships, like storing a phone book or configuration.
+>>>>>>> 4333302da76f2965e9ac1810b979d10d1baeb1f6
 
