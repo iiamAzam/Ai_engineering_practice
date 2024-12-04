@@ -134,3 +134,72 @@
 # Syntax: {key: value}
 # Use Case: For mapping relationships, like storing a phone book or configuration.
 
+#  Frozenset
+# Definition: An immutable version of a set.
+# Mutable: No (elements cannot be added or removed).
+# Duplicates: Not allowed.
+# Syntax: frozenset()
+# Use Case: For unique items that should not change (e.g., keys in a dictionary).
+
+# Definition: A collection following First-In-First-Out (FIFO) principle.
+# Mutable: Yes.
+# Duplicates: Allowed.
+# Syntax: From collections or queue modules.
+# Use Case: For task scheduling, process handling.
+# from collections import deque
+# queue = deque([1, 2, 3])
+# queue.append(4)  # Add to the end
+# queue.popleft()  # Remove from the front
+# print(queue)  # Output: deque([2, 3, 4])
+
+
+# Stack
+# Definition: A collection following Last-In-First-Out (LIFO) principle.
+# Mutable: Yes.
+# Duplicates: Allowed.
+# Syntax: Typically implemented using a list.
+# Use Case: For function calls, undo/redo actions.
+# Example:
+# python
+# Copy code
+# stack = [1, 2, 3]
+# stack.append(4)  # Push to stack
+# stack.pop()      # Pop from stack
+# print(stack)  # Output: [1, 2, 3]
+
+# Arrays (From array Module)
+# Definition: A collection of elements of the same type.
+# Mutable: Yes.
+# Duplicates: Allowed.
+# Syntax: array.array()
+# Use Case: When performance with same-type elements is critical.
+# from array import array
+# arr = array('i', [1, 2, 3])  # 'i' means integers
+# arr.append(4)
+# print(arr)  # Output: array('i', [1, 2, 3, 4])
+
+
+# Byte Arrays
+# Definition: A mutable sequence of bytes.
+# Mutable: Yes.
+# Duplicates: Allowed.
+# Syntax: bytearray()
+# Use Case: For binary data that needs modification.
+# Example:
+# python
+# Copy code
+# ba = bytearray(b"hello")
+# ba[0] = 72  # ASCII for 'H'
+# print(ba)  # Output: bytearray(b'Hello')
+
+# Feature	     List	    Tuple	    Set	    Dictionary	        String	    Queue/Stack
+# Ordered	     Yes	    Yes	        No	    Yes (for keys)	    Yes	           Depends
+# Mutable	     Yes	    No	        Yes	    Yes	                No	           Yes
+# Duplicates    Allowed	    Allowed	    Not     Allowed	Keys:{No,   Allowed	       Allowed
+#                                               Values: Yes	}
+# Indexed	    Yes	        Yes	        No	    Keys only	        Yes	            Yes (list-based)
+# Use Case	    Dynamic 	Fixed   	Unique 	Key-Value 		    Text data       Sequential tasks
+                # data      data        items   mapping
+
+
+
