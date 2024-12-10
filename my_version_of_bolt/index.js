@@ -1,11 +1,13 @@
 const express = require('express')
 const { Server } = require('socket.io')
 const axios = require('axios')
+const { ChatGroq } = require('@langchain/groq')
+require('dotenv').config()
 // const { HfInference } = require('@huggingface/inference')
+
 const app = express()
 
 const http = require('http')
-
 const httpserver = http.createServer(app)
 const io = new Server(httpserver)
 app.use(express.json)
@@ -15,30 +17,33 @@ app.get('/', (req, res) => {
     message: 'iam working fine',
   })
 })
-const modelAPIUrl =
-  'https://api-inference.huggingface.co/models/bigcode/starcoder'
-const hugging_token = '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'
-async function generateCode(inputText) {
-  try {
-    const response = await axios.post(
-      modelAPIUrl,
-      {
-        inputs: inputText, // This is the input prompt for the model
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${hugging_token}`, // Add the Bearer token for authorization
-        },
-      }
-    )
+const GROQ_API_KEY = process.env.GROK_API_KEY
 
-    // Log the output from the model
-    console.log('Generated Code:', response.data[0].generated_text)
-  } catch (error) {
-    console.error('Error while generating code:', error)
-  }
+const llm = new ChatGroq({
+  model: 'llama3-70b-8192',
+  temperature: 0,
+  maxTokens: 1000,
+  maxRetries: 2,
+  apiKey: GROQ_API_KEY,
+})
+
+async function invoke() {
+  const aiStream = await llm.invoke([
+    {
+      role: 'system',
+      content: 'You are a full stack developer.',
+    },
+    {
+      role: 'user',
+      content: 'Write a simple todo web app.',
+    },
+  ])
+  console.log(aiStream)
 }
-generateCode('write hello world program in javascript')
+invoke()
+
+// const hugging_token = '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'
+
 app.listen(port, () => {
   console.log(`iam working at ${port}`)
 })
