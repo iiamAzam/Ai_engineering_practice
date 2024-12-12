@@ -15,13 +15,13 @@ function App() {
   const [steps, setsteps] = useState<Step[]>([])
   const [showEditor, setShowEditor] = useState(false);
   const [activeView, setActiveView] = useState<'code' | 'preview'>('code');
-  const  backend_url= "http://localhost:8000/gettype"
+  const  backend_url= "http://localhost:8000"
   const handleSubmit = async (message: string) => {
     setResponse(`// Generated code for: ${message}\n\nfunction HelloWorld() {\n  return <div>Hello World</div>;\n}`);
-    const respose = await axios.post(backend_url, {
+    const respose = await axios.post(`${backend_url}/gettype`, {
           userinput: message
     })
-    const { prompt, promptfor_ui } = respose.data
+    const { prompts, promptfor_ui } = respose.data
     setsteps(parseXml(promptfor_ui[0]).map((x:Step) => (
              {
         ...x,
@@ -29,7 +29,12 @@ function App() {
 
             }
     )))
-
+    const stepresponse = await axios.post(`${backend_url}/chat`, {
+      message: [...prompts, message].map((content) => ({
+        role: "user",
+        content
+          }))
+      })
 
 
 
@@ -73,7 +78,8 @@ function App() {
 
                 <div className="grid md:grid-cols-12 gap-4 flex-1">
                   <div className="md:col-span-3">
-                    <FileExplorer   />
+                    <FileExplorer
+                      />
                   </div>
                   <div className="md:col-span-9">
                     {activeView === 'code' ? (

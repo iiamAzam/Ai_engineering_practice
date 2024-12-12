@@ -56,7 +56,7 @@ app.post('/gettype', async (req, res) => {
 
   if (response.content === 'React') {
     return res.status(200).json({
-      prompt: [
+      prompts: [
         BASE_PROMPT,
         `Here is an artifact that contains all files of the project visible to you.\nConsider the contents of ALL files in the project.\n\n${basePrompt}\n\nHere is a list of files that exist on the file system but are not being shown to you:\n\n  - .gitignore\n  - package-lock.json\n`,
       ],
@@ -65,16 +65,16 @@ app.post('/gettype', async (req, res) => {
   }
   if (response.content === 'Node') {
     return res.status(200).json({
-      prompt: [
+      prompts: [
         BASE_PROMPT,
         `Here is an artifact that contains all files of the project visible to you.\nConsider the contents of ALL files in the project.\n\n${NodebasePrompt}\n\nHere is a list of files that exist on the file system but are not being shown to you:\n\n  - .gitignore\n  - package-lock.json\n`,
       ],
-      promptforui: NodebasePrompt,
+      promptfor_ui: NodebasePrompt,
     })
   }
 })
 
-app.post('./chat', async (req, res) => {
+app.post('/chat', async (req, res) => {
   const message = req.body.message
   try {
     const aicall = await llm.invoke([
