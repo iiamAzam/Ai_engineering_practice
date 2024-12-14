@@ -46,8 +46,8 @@ async function invoke(userinput) {
 app.use(cors())
 app.post('/gettype', async (req, res) => {
   const { userinput } = req.body
-  console.log(userinput)
   const response = await invoke(userinput)
+  console.log(response.content)
   if (response.content !== 'React' && response.content !== 'Node') {
     res.status(400).json({
       val: 'please check the prompt',
@@ -57,42 +57,44 @@ app.post('/gettype', async (req, res) => {
   if (response.content === 'React') {
     return res.status(200).json({
       prompts: [
-        BASE_PROMPT,
+        BASE_PROMPT.BASE_PROMPT,
         `Here is an artifact that contains all files of the project visible to you.\nConsider the contents of ALL files in the project.\n\n${basePrompt}\n\nHere is a list of files that exist on the file system but are not being shown to you:\n\n  - .gitignore\n  - package-lock.json\n`,
       ],
-      promptfor_ui: basePrompt,
+      promptfor_ui: [basePrompt],
     })
   }
   if (response.content === 'Node') {
     return res.status(200).json({
       prompts: [
-        BASE_PROMPT,
         `Here is an artifact that contains all files of the project visible to you.\nConsider the contents of ALL files in the project.\n\n${NodebasePrompt}\n\nHere is a list of files that exist on the file system but are not being shown to you:\n\n  - .gitignore\n  - package-lock.json\n`,
       ],
-      promptfor_ui: NodebasePrompt,
+      promptfor_ui: [NodebasePrompt],
     })
   }
 })
 
 app.post('/chat', async (req, res) => {
   const message = req.body.message
+  console.log(message[0])
   try {
     const aicall = await llm.invoke([
       {
         role: 'system',
         content: getSystemPrompt(),
       },
-      {
-        role: 'user',
-        content: message,
-      },
+      message[0],
+      message[1],
+      message[2],
     ])
+    console.log(aicall.content)
     res.status(200).json({
       response: aicall.content,
     })
   } catch (error) {
+    console.log(error)
     res.status(400).json({
       message: 'somthing went wrong',
+      error: error,
     })
   }
 })

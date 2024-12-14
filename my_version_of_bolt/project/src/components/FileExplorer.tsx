@@ -5,7 +5,7 @@ import {FileItem}  from '../types'
 
 interface Filetype {
   files: FileItem[]
-  onFileSelect: (file: FileItem) => void;
+  onFileSelect: (file : FileItem) => void;
 }
 
 interface FileNodeProps {
@@ -29,7 +29,7 @@ function FileNode({ item, depth, onFileClick }: FileNodeProps) {
     <div className="select-none">
       <div
         className="flex items-center gap-2 p-2 hover:bg-gray-800 rounded-md cursor-pointer"
-        style={{ paddingLeft: `${depth * 1.5}rem` }}
+        style={{ paddingLeft: `${depth * 1}rem` }}
         onClick={handleClick}
       >
         {item.type === 'folder' && (
@@ -70,7 +70,7 @@ function FileNode({ item, depth, onFileClick }: FileNodeProps) {
 
 export function FileExplorer({files, onFileSelect}:Filetype) {
   return (
-    <div className="h-full bg-gray-900 border-r border-gray-800">
+    <div className="h-[350px] overflow-y-scroll  bg-gray-900 border-r border-gray-800">
       <div className="p-4">
         <h3 className="text-sm font-medium text-gray-300 mb-2">Files</h3>
         <div className="space-y-1">
