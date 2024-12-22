@@ -319,11 +319,12 @@ function Navbar() {
               >
                 <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Explore Watch</li>
                 <li className='text-[20px] my-2 font-bold cursor-pointer'>Explore all apple Watch</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Mac</li>
-                <li className='text-[20px] my-2  font-bold cursor-pointer'>iPad</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>iPhone</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Watch</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Accessories</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Watch Series 10</li>
+                <li className='text-[20px] my-2  font-bold cursor-pointer'>Apple Watch Ultra 2</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Watch SE</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Watch Nike</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Compare Watch</li>
+                 <li className='text-[20px] my-2 font-bold cursor-pointer'>Why Apple Watch</li>
               </motion.ul>
               <motion.ul className=' py-12 text-[14px]'
                 initial={{ opacity: 0 }}
@@ -331,10 +332,10 @@ function Navbar() {
 
                 transition={{ duration: 1, ease: "backInOut" }}
                 exit={{opacity: 0}}>
-                 <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Quick links</li>
-                <li className='   cursor-pointer'>Shop holiday gift</li>
-                <li className='   cursor-pointer'>Find a Store</li>
-                <li className='  cursor-pointer'>Order Status</li>
+                 <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Shop Apple Watch</li>
+                <li className='   cursor-pointer'>Shop Apple Watch</li>
+                <li className='   cursor-pointer'>Apple Watch Straps</li>
+                <li className='  cursor-pointer'>Apple Watch Accessories</li>
                 <li className='   cursor-pointer'>Ways to Buy</li>
               </motion.ul>
               <motion.ul className=' py-12 text-[14px]'
@@ -344,10 +345,16 @@ function Navbar() {
                 transition={{ duration: 1, ease: "backInOut" }}
                 exit={{opacity: 0}}
               >
-                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Shop Special Stores</li>
-                <li className='cursor-pointer'>Education</li>
-                <li className='cursor-pointer'>Bussnes</li>
-              </motion.ul>
+                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>More from Watch</li>
+                <li className='cursor-pointer'>Apple Watch Support</li>
+                <li className='cursor-pointer'>AppleCare+</li>
+                <li className='cursor-pointer'>WatchOS 11</li>
+                <li className='cursor-pointer'>Apple Watch for your Kids</li>
+                <li className='cursor-pointer'>Apps by Apple</li>
+
+
+
+                          </motion.ul>
             </div>
           </motion.div>
                     ) : drop === 'Entertainment' ? (
@@ -366,13 +373,15 @@ function Navbar() {
                 transition={{ duration: 1, ease: "backInOut" }}
                 exit={{opacity: 0}}
               >
-                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>shop</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Shop the latest</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Mac</li>
-                <li className='text-[20px] my-2  font-bold cursor-pointer'>iPad</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>iPhone</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Watch</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Accessories</li>
+                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Explore Entertainment</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple one</li>
+                <li className='text-[20px] my-2  font-bold cursor-pointer'>Apple TV</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Music</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Arcade</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Poadcast</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Books</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Store</li>
+
               </motion.ul>
               <motion.ul className=' py-12 text-[14px]'
                 initial={{ opacity: 0 }}
@@ -380,22 +389,10 @@ function Navbar() {
 
                 transition={{ duration: 1, ease: "backInOut" }}
                 exit={{opacity: 0}}>
-                 <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Quick links</li>
-                <li className='   cursor-pointer'>Shop holiday gift</li>
-                <li className='   cursor-pointer'>Find a Store</li>
-                <li className='  cursor-pointer'>Order Status</li>
-                <li className='   cursor-pointer'>Ways to Buy</li>
-              </motion.ul>
-              <motion.ul className=' py-12 text-[14px]'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                 <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Support</li>
+                <li className='   cursor-pointer'>Apple TV+ Support</li>
+                <li className='   cursor-pointer'>Apple Music Support</li>
 
-                transition={{ duration: 1, ease: "backInOut" }}
-                exit={{opacity: 0}}
-              >
-                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Shop Special Stores</li>
-                <li className='cursor-pointer'>Education</li>
-                <li className='cursor-pointer'>Bussnes</li>
               </motion.ul>
             </div>
           </motion.div>
@@ -415,13 +412,13 @@ function Navbar() {
                 transition={{ duration: 1, ease: "backInOut" }}
                 exit={{opacity: 0}}
               >
-                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>shop</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Shop the latest</li>
+                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Shop Accessories</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Shop All the Accessories</li>
                 <li className='text-[20px] my-2 font-bold cursor-pointer'>Mac</li>
                 <li className='text-[20px] my-2  font-bold cursor-pointer'>iPad</li>
                 <li className='text-[20px] my-2 font-bold cursor-pointer'>iPhone</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Watch</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Accessories</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Air Pods</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>TV and Home</li>
               </motion.ul>
               <motion.ul className=' py-12 text-[14px]'
                 initial={{ opacity: 0 }}
@@ -429,23 +426,13 @@ function Navbar() {
 
                 transition={{ duration: 1, ease: "backInOut" }}
                 exit={{opacity: 0}}>
-                 <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Quick links</li>
-                <li className='   cursor-pointer'>Shop holiday gift</li>
-                <li className='   cursor-pointer'>Find a Store</li>
-                <li className='  cursor-pointer'>Order Status</li>
-                <li className='   cursor-pointer'>Ways to Buy</li>
-              </motion.ul>
-              <motion.ul className=' py-12 text-[14px]'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                 <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Explore Accessories</li>
+                <li className='   cursor-pointer'>Made ny Apple</li>
+                <li className='   cursor-pointer'>Beats by Dr.Dre</li>
+                <li className='  cursor-pointer'>Airtag</li>
 
-                transition={{ duration: 1, ease: "backInOut" }}
-                exit={{opacity: 0}}
-              >
-                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Shop Special Stores</li>
-                <li className='cursor-pointer'>Education</li>
-                <li className='cursor-pointer'>Bussnes</li>
               </motion.ul>
+
             </div>
           </motion.div>
             ) : drop === 'Support'?(
@@ -464,25 +451,27 @@ function Navbar() {
                 transition={{ duration: 1, ease: "backInOut" }}
                 exit={{opacity: 0}}
               >
-                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>shop</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Shop the latest</li>
+                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Explore Support</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>iPhone</li>
                 <li className='text-[20px] my-2 font-bold cursor-pointer'>Mac</li>
                 <li className='text-[20px] my-2  font-bold cursor-pointer'>iPad</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>iPhone</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Apple Watch</li>
-                <li className='text-[20px] my-2 font-bold cursor-pointer'>Accessories</li>
-              </motion.ul>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>Watch</li>
+                <li className='text-[20px] my-2 font-bold cursor-pointer'>AirPods</li>
+               <li className='text-[20px] my-2 font-bold cursor-pointer'>Music</li>
+              <li className='text-[20px] my-2 font-bold cursor-pointer'>TV</li>
+              <li className='text-[13px] my-2 font-bold cursor-pointer'>Explore Support</li>
+                                </motion.ul>
               <motion.ul className=' py-12 text-[14px]'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
 
                 transition={{ duration: 1, ease: "backInOut" }}
                 exit={{opacity: 0}}>
-                 <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Quick links</li>
-                <li className='   cursor-pointer'>Shop holiday gift</li>
-                <li className='   cursor-pointer'>Find a Store</li>
-                <li className='  cursor-pointer'>Order Status</li>
-                <li className='   cursor-pointer'>Ways to Buy</li>
+                 <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Get Help</li>
+                <li className='   cursor-pointer'>Community</li>
+                <li className='   cursor-pointer'>Check Coverage</li>
+                <li className='  cursor-pointer'>Repair</li>
+
               </motion.ul>
               <motion.ul className=' py-12 text-[14px]'
                 initial={{ opacity: 0 }}
@@ -491,10 +480,12 @@ function Navbar() {
                 transition={{ duration: 1, ease: "backInOut" }}
                 exit={{opacity: 0}}
               >
-                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Shop Special Stores</li>
-                <li className='cursor-pointer'>Education</li>
-                <li className='cursor-pointer'>Bussnes</li>
-              </motion.ul>
+                <li className='text-gray-300 mb-3 text-[13px] cursor-default'>Helpfull Topics</li>
+                <li className='cursor-pointer'>Get AppleCare+</li>
+                <li className='cursor-pointer'>Apple Account and Password</li>
+                <li className='cursor-pointer'>Billing and Subscription</li>
+                <li className='cursor-pointer'>Accessibility</li>
+                                </motion.ul>
             </div>
           </motion.div>
                           ) : (<div></div>)
