@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAppleWhole, faSearch, faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import { faAppleWhole, faSearch, faBagShopping ,faArrowRight , faBox, faSave, faSign, faSignOut  } from "@fortawesome/free-solid-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
@@ -40,7 +40,7 @@ function Navbar() {
       setDrop ('Search')
   }
   const oncart = () => {
-        setDrop ('cart')
+        setDrop ('Cart')
   }
 
 
@@ -64,10 +64,10 @@ function Navbar() {
         <li onMouseEnter={onEntertainment} className="hover:text-white cursor-pointer">Entertainment</li>
         <li onMouseEnter={onAccessories} className="hover:text-white cursor-pointer">Accessories</li>
         <li onMouseEnter={onSupport} className="hover:text-white cursor-pointer">Support</li>
-        <li onMouseEnter={onsearch} className="hover:text-white cursor-pointer">
+        <li onClick={onsearch} className="hover:text-white cursor-pointer">
           <FontAwesomeIcon icon={faSearch} className="font-extralight" />
         </li>
-        <li onMouseEnter={oncart} className="hover:text-white cursor-pointer">
+        <li onClick={oncart} className="hover:text-white cursor-pointer">
           <FontAwesomeIcon icon={faBagShopping} />
         </li>
       </ul>
@@ -488,9 +488,47 @@ function Navbar() {
                                 </motion.ul>
             </div>
           </motion.div>
-                          ) : (<div></div>)
-}
+                          ) : drop === 'Search' ? (
+                            <div>
 
+                                <motion.ul className=' py-12 text-white text-[14px]'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+
+                transition={{ duration: 1, ease: "backInOut" }}
+                                exit={{ opacity: 0 }}>
+                  <FontAwesomeIcon className='text-gray-400 mx-2 text-[20px]'  icon={faSearch}></FontAwesomeIcon><input className='bg-inherit font-bold mb-5 font-sans outline-none  text-[25px]'  placeholder='Search Apple.Com' />
+                 <li className='text-gray-300 mb-2  text-[13px] cursor-default'>Quick Links</li>
+                <li className=' mb-1 text-[13px]   cursor-pointer'><FontAwesomeIcon className='text-[10px] text-gray-300' icon={faArrowRight}></FontAwesomeIcon> Holiday Gifts</li>
+                <li className=' mb-1 text-[13px]  cursor-pointer'><FontAwesomeIcon className='text-[10px] text-gray-300' icon={faArrowRight}></FontAwesomeIcon> Find a Store</li>
+                <li className=' mb-1 text-[13px] cursor-pointer'><FontAwesomeIcon className='text-[10px] text-gray-300' icon={faArrowRight}></FontAwesomeIcon> Gift Cards</li>
+                <li className=' mb-1 text-[13px] cursor-pointer'><FontAwesomeIcon className='text-[10px] text-gray-300' icon={faArrowRight}></FontAwesomeIcon> Apple Trade in</li>
+
+              </motion.ul>
+                              </div>
+
+                            ) : drop === 'Cart' ? (
+                                 <div>
+
+                                <motion.ul className=' py-12 text-white text-[14px]'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+
+                transition={{ duration: 1, ease: "backInOut" }}
+                                exit={{ opacity: 0 }}>
+                <li className='text-gray-300 mb-4 font-bold  text-[25px] cursor-default'>Your bag is empty</li>
+                <li className='text-gray-300 mb-5  text-[13px] cursor-default'>Shop now</li>
+                <li className='text-gray-300 mb-2  text-[13px] cursor-default'>My Profile</li>
+                 <li className=' mb-1 text-[13px]   cursor-pointer'><FontAwesomeIcon className='text-[10px] text-gray-300' icon={faBox}></FontAwesomeIcon> Orders</li>
+                 <li className=' mb-1 text-[13px]  cursor-pointer'><FontAwesomeIcon className='text-[10px] text-gray-300' icon={faSave}></FontAwesomeIcon> Your saves</li>
+                 <li className=' mb-1 text-[13px] cursor-pointer'><FontAwesomeIcon className='text-[10px] text-gray-300' icon={faSign}></FontAwesomeIcon> Account</li>
+                 <li className=' mb-1 text-[13px] cursor-pointer'><FontAwesomeIcon className='text-[10px] text-gray-300' icon={faSignOut}></FontAwesomeIcon> Sign out</li>
+              </motion.ul>
+                                </div>
+                              ): (<div>
+
+                          </div>)
+}
       </AnimatePresence>
 </div>
       <div>
