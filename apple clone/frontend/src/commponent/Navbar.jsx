@@ -7,7 +7,7 @@ function Navbar() {
   const [drop, setDrop] = React.useState(0);
 
   const onRemove = () => {
-    setDrop(0);
+    setDrop(0); 
   };
 
   const onStore = () => {
