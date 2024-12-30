@@ -69,10 +69,10 @@ function Homepage() {
               Two Sizes. Faster chip. Does all.
           </span>
 
-          <h2  className=' text-gray-400  absolute left-[20px] tracking-wider   top-[550px]  text-[13px]'>
-              Apple intelligens available now in US English
+          <h2  className=' bg-gradient-to-r from-sky-400 to-red-400  absolute  tracking-wider  text-transparent bg-clip-text ml-2 font-semibold left-[20px]  top-[500px]  text-[23px]'>
+           Build for apple intelligens
             </h2>
-           <h2  className=' text-gray-400  absolute left-[20px] tracking-wider   top-[550px]  text-[13px]'>
+           <h2  className=' text-gray-400  absolute left-[50px]   top-[550px]  text-[13px]'>
               Apple intelligens available now in US English
             </h2>
 
