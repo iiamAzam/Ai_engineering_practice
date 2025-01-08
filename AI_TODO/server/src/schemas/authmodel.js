@@ -12,4 +12,5 @@ const Signup = new Schema({
             require : true
         }
 })
-module.exports=mongoose.model('User',Signup)
+
+module.exports=mongoose.model('user',Signup)

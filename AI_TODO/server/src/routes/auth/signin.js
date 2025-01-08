@@ -42,3 +42,9 @@ route.post('/signin',async(req,res)=>{
         }
         
 })
+
+route.use('/n',require('../notes/index'))
+route.use('/s',require('../summary/index'))
+route.use('/t',require('../todos/todos'))
+
+module.exports = route

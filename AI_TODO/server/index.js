@@ -8,9 +8,9 @@ app.use (express.json())
 app.get('/',(req,res)=>{
         res.status(200).json("iam working")
 })
+app.use('/',require('./src/routes/auth/signin'))
 app.listen(port, ()=>{
         console.log(`the server is running on the port : ${port}`)
 })
-
 
 
