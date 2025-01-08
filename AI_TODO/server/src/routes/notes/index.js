@@ -1,8 +1,6 @@
-const express = require('express')
-const Note = require ('../../schemas/notesmidel')
-
+import express from 'express'
+import Note from '../../schemas/notesmidel'
 const route = express.Router()
-
 route.post('/notes', async (req, res) => {
     try {
       const { title, content } = req.body;
@@ -66,4 +64,4 @@ route.post('/notes', async (req, res) => {
     }
   });
   
-  module.exports=route
+  export default route

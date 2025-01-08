@@ -1,19 +1,17 @@
-const mongoose = require('mongoose')
-
+import mongoose from 'mongoose'
 const Schema = mongoose.Schema
-
 const notesmodel = new Schema({
     title:{
             type : String,
-            required:true
+            require:true
         } ,
     content:  {
             type : String,
-            required:true
+            require:true
 
         }
 },{
         timestamps:true
 })
 
-module.exports=mongoose.model("note", notesmodel )
+export default mongoose.model("note", notesmodel )

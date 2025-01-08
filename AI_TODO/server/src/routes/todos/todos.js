@@ -1,6 +1,6 @@
-const express = require('express')
-const ai_fun = require('../../aiintigration/index')
-const todomodule = require('../../schemas/todo_schemas')
+import express from 'express'
+import ai_fun from '../../aiintigration/index'
+import todomodule from '../../schemas/todo_schemas'
 const rout = express.Router()
 rout.post('/todo', async(req,res)=>{
         const {todo,status} = req.body
@@ -95,6 +95,6 @@ rout.get('/todo/:id', async (req, res) => {
 });
 
 
-module.exports=rout
+export default  rout
 
 

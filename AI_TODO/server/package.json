@@ -1,4 +1,7 @@
 {
+
+
+  "type": "module",
   "dependencies": {
     "@langchain/core": "^0.3.27",
     "@langchain/groq": "^0.1.2",

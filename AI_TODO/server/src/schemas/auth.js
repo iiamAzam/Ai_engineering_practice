@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-
+import mongoose from "mongoose"
 const Schema=mongoose.Schema
 
 const Signup = new Schema({
@@ -13,4 +12,4 @@ const Signup = new Schema({
         }
 })
 
-module.exports=mongoose.model('user',Signup)
+export default mongoose.model('user', Signup)

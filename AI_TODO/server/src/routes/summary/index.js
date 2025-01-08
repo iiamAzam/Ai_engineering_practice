@@ -1,7 +1,7 @@
-const express = require("express")
-const Notes = require('../../schemas/todo_schemas')
+import express from 'express'
+import Notes from '../../schemas/todo_schemas'
 const route = express.Router()
-const ai_fun = require('../../aiintigration/index')
+import ai_fun from '../../aiintigration/index'
 route.get('/summary',async(req,res)=>{
     try{
         const notes = await Notes.find()
@@ -16,4 +16,4 @@ route.get('/summary',async(req,res)=>{
     }
 })
 
-module.exports=route
+export default route
