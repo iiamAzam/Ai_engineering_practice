@@ -95,6 +95,6 @@ rout.get('/todo/:id', async (req, res) => {
 });
 
 
-
+module.exports=rout
 
 
