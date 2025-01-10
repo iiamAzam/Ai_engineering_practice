@@ -41,7 +41,7 @@ rout.put('/todo/:id', async (req, res) => {
         if (!updatedTodo) {
             return res.status(404).json('Todo not found');
         }
-
+     console.log(updatedTodo)   
         res.status(200).json(updatedTodo);
     } catch (error) {
         console.log(error);
