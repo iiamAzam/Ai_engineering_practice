@@ -12,4 +12,7 @@ const Signup = new Schema({
         }
 })
 
-export default mongoose.model('user', Signup)
+
+const authmodel = mongoose.model('user', Signup)
+
+export default authmodel

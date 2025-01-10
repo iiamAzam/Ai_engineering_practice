@@ -1,10 +1,10 @@
 import express from 'express'
-import Note from '../../schemas/notesmidel'
+import notemodel from '../../schemas/notesmidel.js'
 const route = express.Router()
 route.post('/notes', async (req, res) => {
     try {
       const { title, content } = req.body;
-      const note = new Note({ title, content });
+      const note = new notemodel({ title, content });
       await note.save();
       res.status(201).json(note);
     } catch (error) {
@@ -15,7 +15,7 @@ route.post('/notes', async (req, res) => {
   
   route.get('/notes', async (req, res) => {
     try {
-      const notes = await Note.find();
+      const notes = await notemodel.find();
       res.status(200).json(notes);
     } catch (error) {
       res.status(500).json({ error: 'Failed to fetch notes' });
@@ -24,7 +24,7 @@ route.post('/notes', async (req, res) => {
   
    route.get('/notes/:id', async (req, res) => {
     try {
-      const note = await Note.findById(req.params.id);
+      const note = await notemodel.findById(req.params.id);
       if (!note) {
         return res.status(404).json({ error: 'Note not found' });
       }
@@ -38,7 +38,7 @@ route.post('/notes', async (req, res) => {
   route.put('/notes/:id', async (req, res) => {
     try {
       const { title, content } = req.body;
-      const note = await Note.findByIdAndUpdate(
+      const note = await notemodel.findByIdAndUpdate(
         req.params.id,
         { title, content, updatedAt: Date.now() },
         { new: true }
@@ -54,7 +54,7 @@ route.post('/notes', async (req, res) => {
   
     route.delete('/notes/:id', async (req, res) => {
     try {
-      const note = await Note.findByIdAndDelete(req.params.id);
+      const note = await notemodel.findByIdAndDelete(req.params.id);
       if (!note) {
         return res.status(404).json({ error: 'Note not found' });
       }
@@ -64,4 +64,4 @@ route.post('/notes', async (req, res) => {
     }
   });
   
-  export default route
+  export const router =  route

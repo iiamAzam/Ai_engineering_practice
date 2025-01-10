@@ -1,7 +1,7 @@
 import express from 'express'
-import Notes from '../../schemas/todo_schemas'
+import Notes from '../../schemas/todo_schemas.js'
 const route = express.Router()
-import ai_fun from '../../aiintigration/index'
+import ai_fun from '../../aiintigration/index.js'
 route.get('/summary',async(req,res)=>{
     try{
         const notes = await Notes.find()
@@ -16,4 +16,4 @@ route.get('/summary',async(req,res)=>{
     }
 })
 
-export default route
+export const router = route

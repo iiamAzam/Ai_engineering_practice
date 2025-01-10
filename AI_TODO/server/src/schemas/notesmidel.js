@@ -14,4 +14,7 @@ const notesmodel = new Schema({
         timestamps:true
 })
 
-export default mongoose.model("note", notesmodel )
+
+const notemodel = mongoose.model("note", notesmodel )
+
+export default notemodel

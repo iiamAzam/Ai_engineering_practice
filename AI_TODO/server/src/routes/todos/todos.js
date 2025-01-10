@@ -1,6 +1,6 @@
 import express from 'express'
-import ai_fun from '../../aiintigration/index'
-import todomodule from '../../schemas/todo_schemas'
+import ai_fun from '../../aiintigration/index.js'
+import todomodule from '../../schemas/todo_schemas.js'
 const rout = express.Router()
 rout.post('/todo', async(req,res)=>{
         const {todo,status} = req.body
@@ -9,9 +9,9 @@ rout.post('/todo', async(req,res)=>{
                     todos:todo,
                     status
             })
-            const systempropmt = "You are a highly intelligent and helpful productivity assistant. Your goal is to help users efficiently complete tasks in the easiest and fastest way possible. When a user provides a to-do item, you will:1. Understand the task fully.2. Break it into simple, actionable steps.3. Suggest the fastest and most efficient way to complete it4. Provide productivity tips, tools, or strategies relevant to the task. 5. Ensure your suggestions are practical, concise, and tailored to the user's needs.Always maintain a positive and encouraging tone, and focus on making the user's day more productive and less stressful."
+            const systempropmt = "You are a highly intelligent and helpful productivity assistant. Your goal is to help users efficiently complete tasks in the easiest and fastest way possible. When a user provides a to-do item, you will:1. Understand the task fully.2. Break it into simple, actionable steps.3. Suggest the fastest and most efficient way to complete it4. Provide productivity tips, tools, or strategies relevant to the task. 5. Ensure your suggestions are practical, concise, and tailored to the user's needs.Always maintain a positive and encouraging tone, and focus on making the user's day more productive and less stressful. next provide smaller lines which are visible in 400px if line are to long go in next lines and make explaination shorter its like 300 tokens "
 
-            const userprompt = "I have a task: [Insert your to-do item here Please provide:1. An easy way to do this.2. The fastest method to complete it.3. Any relevant productivity tips or tools I can use."
+            const userprompt = `I have a task: ${todo}. here to-do item  Please provide:1. An easy way to do this.2. The fastest method to complete it.3. Any relevant productivity tips or tools I can use. next provide smaller lines which are visible in 50px if line are to long go in next lines and make explaination shorter its like 300 tokens. each line contains less or equal 100 charecters note dont exceed the lines more then 100 charecter  `
             const savestodo = await newtodo.save()
             if(!savestodo){
                 return res.status(400).json('somthing went wrong')
@@ -95,6 +95,6 @@ rout.get('/todo/:id', async (req, res) => {
 });
 
 
-export default  rout
+export const router =  rout
 
 

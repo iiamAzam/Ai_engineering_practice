@@ -1,0 +1,20 @@
+/* TextAnimator.css */
+.text-animation {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    /* border-right: 4px solid black;  "Cursor" effect */
+    animation: typing 4s steps(40) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
