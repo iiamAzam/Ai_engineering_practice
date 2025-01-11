@@ -33,14 +33,21 @@ export const useTodoStore = create<TodoStore>((set) => ({
   }
   },
 
-  toggleTodo: (id) => {
+  toggleTodo: async(id) => {
+    console.log(id)
+    const todowith_id= await axios.put(`http://localhost:8000/t/todo/${id}`)
     set((state) => ({
       todos: state.todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       ),
     }));
   },
-
+  deleteTodo:(id)=>{
+      set((state)=>({
+        todos:state.todos.filter((e)=>e.id!=id)
+      }))
+  }
+,
   generateSummary: () => {
     set((state) => {
       const completed = state.todos.filter(todo => todo.completed).length;

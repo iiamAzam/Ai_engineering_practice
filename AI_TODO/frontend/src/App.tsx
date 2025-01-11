@@ -5,7 +5,7 @@ import TextAnimator from './utils/TextAnimator'
 
 function App() {
   const [newTodo, setNewTodo] = useState('');
-  const { todos, suggestion, summary, addTodo, toggleTodo, generateSummary } = useTodoStore();
+  const { todos, suggestion, summary, addTodo,  toggleTodo, generateSummary,deleteTodo} = useTodoStore();
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const [worsstring, setwordstring] = useState('')
   const [summar1,setsummary1]=useState('')
@@ -33,6 +33,7 @@ function App() {
   const setsummary=()=>{
     setsummary1(summary)
   }
+
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-purple-50 to-blue-50 p-8">
@@ -83,8 +84,11 @@ function App() {
                 <span className={`flex  `}>
                  <div className={`mt-[6px] ${todo.completed ? 'line-through text-gray-500' : 'text-gray-800'} break-words whitespace-normal w-[320px]`}>{todo.text}</div> 
                   <button
-                 type="submit"
-                 className="px-4 py-2 ml-[200px] max-h-10 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2"
+                 
+                 onClick={()=>{deleteTodo(todo.id)
+                              
+                 }}
+                 className="px-4 py-2  max-h-10 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center gap-2"
                 >
                   delete
                 </button>

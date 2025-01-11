@@ -12,4 +12,5 @@ export interface TodoStore {
   addTodo: (text: string) => void;
   toggleTodo: (id: string) => void;
   generateSummary: () => void;
+  deleteTodo:(id:string)=>void
 }
